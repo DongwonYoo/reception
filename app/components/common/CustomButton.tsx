@@ -27,7 +27,7 @@ export default function CustomButton({
     sm: "w-32 h-10 text-sm", // 작은 버튼
     md: "w-36 h-12 text-base", // 중간 크기 버튼
     lg: "w-40 h-14 text-lg", // 큰 버튼 (기본)
-    xl: "w-64 h-20 text-4xl",
+    xl: "w-64 h-20 text-2xl",
   };
 
   return (

@@ -13,7 +13,7 @@ export default function Page() {
         </Text>
         <CustomButton
           size="xl"
-          text="受付開始"
+          text="受付はこちら"
           href="/select-staff"
           variant="outline"
           className="text-gray-700 border border-gray-300"
