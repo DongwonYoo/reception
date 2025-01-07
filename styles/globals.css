@@ -1,6 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* globals.css */
+@import url("https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap");
+html,
+body {
+  font-family: "Kosugi Maru", sans-serif;
+}
 
 @layer base {
   :root {

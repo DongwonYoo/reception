@@ -1,38 +1,45 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 import { useState } from "react";
 import InputField from "../components/common/InputField";
 import CustomButton from "../components/common/CustomButton";
 import { handleSubmit } from "../components/utils/handleSubmit";
-
+import Card from "../components/common/Card";
 
 export default function InputNamePage() {
+    const router = useRouter();
     const searchParams = useSearchParams();
-    const staffId = searchParams.get("staffId"); // 선택된 스태프 ID
-    const staffName = searchParams.get("staffName"); // 선택된 스태프 이름
-    const [name, setName] = useState(""); // 입력된 사용자 이름
-    const [errorMessage, setErrorMessage] = useState(""); // 에러 메시지
-    const [successMessage, setSuccessMessage] = useState(""); // 성공 메시지
-
+    const staffId = searchParams.get("staffId");
+    const staffName = searchParams.get("staffName");
+    const [name, setName] = useState("");
+    const [errorMessage, setErrorMessage] = useState("");
+    const [successMessage, setSuccessMessage] = useState("");
 
     return (
-        <div>
-            <h1>이름 입력</h1>
-            <p>선택된 스텝: {staffName}</p>
-            {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
-            {successMessage && <p style={{ color: "green" }}>{successMessage}</p>}
-            <form onSubmit= {(e) =>
-                    handleSubmit(e, staffId, name, setErrorMessage, setSuccessMessage)
-                }
-            >
-                <InputField
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    placeholder="이름을 입력하세요"
-                />
-                <CustomButton text="메일 전송" type="submit"/>
-            </form>
-        </div>
+        <Card title="이름 입력" subtitle={`선택된 스텝: ${staffName || ""}`}>
+
+            {/* 폼 영역 */}
+            <div className="p-6 pt-0">
+                <form
+                    onSubmit={(e) =>
+                        handleSubmit(e, staffId, name, setErrorMessage, setSuccessMessage)
+                    }
+                >
+                    <InputField
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        placeholder="お客様の名前を入力してください"
+                    />
+                    <CustomButton
+                        text="뒤로가기"
+                        variant="outline"
+                        onClick={() => router.back()}
+                    />
+                    <CustomButton text="受付" type="submit" className="mt-4" />
+                </form>
+            </div>
+        </Card>
+
     );
 }
