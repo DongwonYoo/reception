@@ -15,9 +15,9 @@ type StaffListProps = {
 };
 
 const staffMembers: Staff[] = [
-  { id: "1", name: "John Doe", color: "bg-red-400" },
-  { id: "2", name: "Jane Smith", color: "bg-green-400" },
-  { id: "3", name: "Alice Johnson", color: "bg-blue-400" },
+  { id: "1", name: "MITSUKI", color: "bg-red-400" },
+  { id: "2", name: "ASAMI", color: "bg-green-400" },
+  { id: "3", name: "TOMOKA", color: "bg-blue-400" },
 ];
 
 export default function StaffList({ onSelect }: StaffListProps) {

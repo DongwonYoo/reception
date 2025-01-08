@@ -1,2 +1,13 @@
+# Node.js dependencies
 node_modules/
+
+# Next.js build output
 .next/
+
+# Local environment variables
+.env.local
+
+# Additional common ignores
+.env
+.env.*.local
+.DS_Store
