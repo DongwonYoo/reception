@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import '../styles/globals.css';
 
 export const metadata = {
@@ -12,6 +13,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+      </Head>
       <body className="bg-orange-50" >
         <div className="flex flex-col items-center justify-center min-h-screen max-w-2xl mx-auto">
           {children}
