@@ -2,6 +2,8 @@ import React from "react";
 import { StaffItem } from "./StaffItem";
 import Text from "../common/Text";
 import Card from "../common/Card";
+import CustomButton from "../common/CustomButton";
+import { useRouter } from "next/navigation";
 
 
 type Staff = {
@@ -15,14 +17,36 @@ type StaffListProps = {
 };
 
 const staffMembers: Staff[] = [
-  { id: "1", name: "MITSUKI", color: "bg-red-400" },
-  { id: "2", name: "ASAMI", color: "bg-green-400" },
-  { id: "3", name: "TOMOKA", color: "bg-blue-400" },
+  { id: "1", name: "MITSUKI", color: "#d96c94" },
+  { id: "2", name: "ASAMI", color: "#d97b29" },
+  { id: "3", name: "TOMOKA", color: "#d94436" },
 ];
 
 export default function StaffList({ onSelect }: StaffListProps) {
+  const router = useRouter();
   return (
-    <Card title="Staff List"
+    <Card title={
+      <div className="flex items-center gap-4">
+        <CustomButton
+          text={
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-5 h-5"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+            </svg>
+          }
+          size="icon"
+          onClick={() => router.back()}
+          className="bg-gray-500"
+        />
+        <span className="text-xl font-semibold">Staff List</span>
+      </div>
+    }
       subtitle="担当のスタッフをお選びください。">
       {/* 상단 영역: 타이틀, 설명 */}
 

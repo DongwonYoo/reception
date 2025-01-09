@@ -8,7 +8,7 @@ import Text from "../components/common/Text";
 
 export default function Page() {
   const router = useRouter();
-  const [timeLeft, setTimeLeft] = useState(6); // 초기 남은 시간
+  const [timeLeft, setTimeLeft] = useState(10); // 초기 남은 시간
 
   useEffect(() => {
     if (timeLeft === 0) {
@@ -24,17 +24,19 @@ export default function Page() {
   }, [timeLeft, router]);
 
   return (
-    <Card
-      title="受付が完了"
-      subtitle="お掛けになって、少々お待ちください。"
-      className="text-center flex items-center justify-center flex-col"
-    >
-      <div className="flex flex-col items-center gap-4">
-        <CustomButton size="lg" text="受付終了" variant="outline" href="/" />
-        <Text as="p" className="text-xs mt-6 text-slate-500">
-          {timeLeft}秒後、自動的にトップページへ戻ります。
-        </Text>
-      </div>
-    </Card>
+    <div className="w-3/4">
+      <Card
+        title="受付が完了"
+        subtitle="お掛けになって、少々お待ちください。"
+        className="text-center flex items-center justify-center flex-col"
+      >
+        <div className="flex flex-col items-center gap-4">
+          <CustomButton size="lg" text="受付終了" variant="outline" href="/" />
+          <Text as="p" className="text-xs mt-6 text-slate-500">
+            {timeLeft}秒後、自動的にトップページへ戻ります。
+          </Text>
+        </div>
+      </Card>
+    </div>
   );
 }

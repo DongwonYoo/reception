@@ -20,7 +20,7 @@ export function StaffItem({ staff, onSelect }: StaffItemProps) {
       className="flex items-center justify-between px-4 py-2 
                  border border-gray-300 rounded-md bg-white 
                  text-gray-700 hover:bg-gray-100 active:bg-gray-200 
-                 cursor-pointer w-full"
+                 cursor-pointer w-half"
     >
       {/* 왼쪽: 아바타 + 이름 */}
       <div className="flex items-center space-x-3">

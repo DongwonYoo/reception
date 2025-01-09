@@ -3,8 +3,10 @@ import InputNamePage from "./InputNamePage";
 
 export default function Page() {
     return (
-        <Suspense fallback={<div>Loading...</div>}>
-            <InputNamePage />
-        </Suspense>
+        <div className="w-3/4">
+            <Suspense fallback={<div>Loading...</div>}>
+                <InputNamePage />
+            </Suspense>
+        </div>
     );
 }

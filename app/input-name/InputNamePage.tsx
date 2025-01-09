@@ -62,7 +62,7 @@ export default function InputNamePage() {
         </div>
       }
       subtitle={`担当スタッフ名: ${staffName || ""}`}
-      className="shadow-lg rounded-lg p-6 w-full max-w-md"
+      className="shadow-lg rounded-lg p-6 w-full max-w-3xl"
     >
       <form
         onSubmit={handleFormSubmit} className="space-y-6"

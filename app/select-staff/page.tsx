@@ -17,7 +17,7 @@ export default function SelectStaffPage() {
     };
 
     return (
-        <div className="w-full">
+        <div className="w-3/4">
             {/* 스태프 리스트 */}
             <StaffList onSelect={handleSelect} />
         </div>
