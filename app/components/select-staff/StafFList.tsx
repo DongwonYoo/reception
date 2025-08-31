@@ -20,7 +20,7 @@ const staffMembers: Staff[] = [
   { id: "1", name: "MITSUKI", color: "#d96c94" },
   { id: "2", name: "ASAMI", color: "#d97b29" },
   { id: "3", name: "TOMOKA", color: "#d94436" },
-  { id: "4", name: "TOMOKA", color: "#36b3d9" },
+  { id: "4", name: "REINA", color: "#36b3d9" },
 
 ];
 
